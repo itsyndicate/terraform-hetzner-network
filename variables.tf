@@ -8,10 +8,11 @@ variable "network_name" {
   description = "Network name"
 }
 
+# https://docs.hetzner.com/cloud/general/locations/#what-locations-are-there
 variable "network_zone" {
   type    = string
   default = "eu-central"
-  description = "Network zone location"
+  description = "Network zone locations: eu-central, us-east, us-west, ap-southeast"
 }
 
 variable "network_cidr" {
