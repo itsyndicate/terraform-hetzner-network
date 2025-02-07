@@ -14,3 +14,12 @@ output "public_subnets" {
     }
   }
 }
+
+output "private_subnets" {
+  value = {
+    for key, subnet in local.private_subnets : key => {
+      name = key
+      ip_range = subnet.ip_range
+    }
+  }
+}
