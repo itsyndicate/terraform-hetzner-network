@@ -9,6 +9,6 @@ locals {
 
 locals {
   private_subnets = {
-    for key, subnet in var.private_subnets : key => hcloud_network_subnet.public[key]
+    for key, subnet in var.private_subnets : key => hcloud_network_subnet.private[key]
   }
 }
