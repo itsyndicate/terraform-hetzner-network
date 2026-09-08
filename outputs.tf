@@ -9,8 +9,8 @@ output "network_id" {
 output "public_subnets" {
   value = {
     for key, subnet in local.public_subnets : key => {
-      name = key
-      id = subnet.id
+      name     = key
+      id       = subnet.id
       ip_range = subnet.ip_range
     }
   }
@@ -19,8 +19,8 @@ output "public_subnets" {
 output "private_subnets" {
   value = {
     for key, subnet in local.private_subnets : key => {
-      name = key
-      id = subnet.id
+      name     = key
+      id       = subnet.id
       ip_range = subnet.ip_range
     }
   }
