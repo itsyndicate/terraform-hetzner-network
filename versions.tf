@@ -1,14 +1,13 @@
 #-----------------------------------------------------------------------------------------------------------------------
-# Locals
+# Versions
 #-----------------------------------------------------------------------------------------------------------------------
-locals {
-  public_subnets = {
-    for key, subnet in var.public_subnets : key => hcloud_network_subnet.public[key]
-  }
-}
+terraform {
+  required_version = ">= 1.3"
 
-locals {
-  private_subnets = {
-    for key, subnet in var.private_subnets : key => hcloud_network_subnet.private[key]
+  required_providers {
+    hcloud = {
+      source  = "hetznercloud/hcloud"
+      version = "~> 1.49"
+    }
   }
 }
